@@ -30,7 +30,7 @@ class AttendanceController extends Controller
 
         $getIp = geoip()->getClientIP();
         
-        $getLocation = geoip()->getLocation('103.136.57.153');
+        $getLocation = geoip()->getLocation($getIp);
 
         $createAttendance = Attendance::create([
                 'user_id' => $user->id,
